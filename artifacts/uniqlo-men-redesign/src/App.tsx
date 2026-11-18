@@ -2,8 +2,6 @@ import { useMemo, useRef, useState } from "react";
 import {
   Search,
   Heart,
-  UserRound,
-  ShoppingBag,
   Menu,
   X,
   ChevronLeft,
@@ -14,59 +12,55 @@ const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
 const asset = (path: string) => `${base}${path.replace(/^\//, "")}`;
-const men = "https://www.uniqlo.com/us/en/men";
-
-type Category = { label: string; href: string; image: string };
+type Category = { label: string; target?: string; image: string };
 const categories: Category[] = [
-  { label: "Outerwear", href: "/men/outerwear-and-blazers", image: "f665ab73af35.jpg" },
-  { label: "Down", href: "/men/outerwear-and-blazers/down-jackets-and-coats", image: "bb144ce1bae3.jpg" },
-  { label: "T-Shirts, Sweats & Fleece", href: "/men/tops", image: "64182a17339d.jpg" },
-  { label: "Fleece", href: "/men/tops/fleece", image: "9cb1f4e566c7.png" },
-  { label: "Sweaters & Knitwear", href: "/men/sweaters", image: "1641dce93aac.png" },
-  { label: "Sweatshirts & Hoodies", href: "/men/tops/sweatshirts-and-hoodies", image: "4dc159fcd9b5.png" },
-  { label: "Shirts", href: "/men/shirts-and-polos", image: "b6a78bbb0c79.jpg" },
-  { label: "Bottoms", href: "/men/bottoms", image: "8dcc0f8ea907.jpg" },
-  { label: "Jeans", href: "/men/bottoms/jeans", image: "84df7dab6457.png" },
-  { label: "Innerwear & Underwear", href: "/men/innerwear", image: "68e82126999f.png" },
-  { label: "Loungewear & Home", href: "/men/loungewear-and-home", image: "44fa6eaac7da.png" },
-  { label: "HEATTECH", href: "/men/heattech", image: "043d30ea7201.png" },
+  { label: "Outerwear", target: "outerwear", image: "f665ab73af35.jpg" },
+  { label: "Down", target: "outerwear", image: "bb144ce1bae3.jpg" },
+  { label: "T-Shirts, Sweats & Fleece", target: "tees", image: "64182a17339d.jpg" },
+  { label: "Fleece", target: "fleece", image: "9cb1f4e566c7.png" },
+  { label: "Sweaters & Knitwear", target: "knitwear", image: "1641dce93aac.png" },
+  { label: "Sweatshirts & Hoodies", target: "tees", image: "4dc159fcd9b5.png" },
+  { label: "Shirts", target: "tees", image: "b6a78bbb0c79.jpg" },
+  { label: "Bottoms", target: "bottoms", image: "8dcc0f8ea907.jpg" },
+  { label: "Jeans", target: "bottoms", image: "84df7dab6457.png" },
+  { label: "Innerwear & Underwear", image: "68e82126999f.png" },
+  { label: "Loungewear & Home", image: "44fa6eaac7da.png" },
+  { label: "HEATTECH", target: "heattech", image: "043d30ea7201.png" },
 ];
 const featuredCategories: Category[] = [
-  { label: "Special Collaborations", href: "/men/special-collaboration", image: "fa77fe8b9391.png" },
-  { label: "UT: Graphic Tees", href: "/special-feature/ut/lineup", image: "296679a2d476.png" },
-  { label: "New Arrivals", href: "/feature/new/men", image: "623e7b535527.png" },
-  { label: "Limited-Time Offers", href: "/feature/limited-offers/men", image: "cc7058abd04e.png" },
-  { label: "Sale", href: "/feature/sale/men", image: "cb19735dd043.png" },
-  { label: "GU", href: "https://www.gu-global.com/us/en/men/", image: "a057b6db5252.png" },
+  { label: "Special Collaborations", image: "fa77fe8b9391.png" },
+  { label: "UT: Graphic Tees", target: "tees", image: "296679a2d476.png" },
+  { label: "New Arrivals", image: "623e7b535527.png" },
+  { label: "Limited-Time Offers", target: "limited-offers", image: "cc7058abd04e.png" },
+  { label: "Sale", target: "limited-offers", image: "cb19735dd043.png" },
+  { label: "GU", target: "gu", image: "a057b6db5252.png" },
 ];
-const categoryUrl = (href: string) =>
-  href.startsWith("http") ? href : `https://www.uniqlo.com/us/en${href}`;
 
-type Product = { name: string; price: string; image: string; badge?: string; href?: string };
+type Product = { name: string; price: string; image: string; badge?: string };
 
 const outerwear: Product[] = [
-  { name: "Harrington Jacket", price: "$59.90", image: "5af84d0bbbc4.jpg", href: "https://www.uniqlo.com/us/en/products/E484610-000/00?colorDisplayCode=32", badge: "Limited-Time Offer until 11/18" },
-  { name: "Single Collar Short Blouson", price: "$89.90", image: "e93a6935ab60.jpg", href: "https://www.uniqlo.com/us/en/products/E487326-000/00?colorDisplayCode=34", badge: "Bestseller" },
-  { name: "Zip-Up Blouson", price: "$59.90", image: "7d13f4cfbc01.jpg", href: "https://www.uniqlo.com/us/en/products/E491096-000/00?colorDisplayCode=57" },
-  { name: "Seamless Down Parka", price: "$179.90", image: "1987fbf6624f.jpg", href: "https://www.uniqlo.com/us/en/products/E486176-000/00?colorDisplayCode=05", badge: "Bestseller" },
+  { name: "Harrington Jacket", price: "$59.90", image: "5af84d0bbbc4.jpg", badge: "Limited-Time Offer until 11/18" },
+  { name: "Single Collar Short Blouson", price: "$89.90", image: "e93a6935ab60.jpg", badge: "Bestseller" },
+  { name: "Zip-Up Blouson", price: "$59.90", image: "7d13f4cfbc01.jpg" },
+  { name: "Seamless Down Parka", price: "$179.90", image: "1987fbf6624f.jpg", badge: "Bestseller" },
 ];
 const knitwear: Product[] = [
-  { name: "Cashmere Sweater", price: "$99.90", image: "ab3590107997.jpg", href: "https://www.uniqlo.com/us/en/products/E450543-000/00?colorDisplayCode=08", badge: "Bestseller" },
-  { name: "Cashmere Quarter-Zip Sweater", price: "$129.90", image: "11c487a15029.jpg", href: "https://www.uniqlo.com/us/en/products/E474146-000/00?colorDisplayCode=03" },
-  { name: "Washable Milano Ribbed Sweater", price: "$49.90", image: "54e68d759d40.jpg", href: "https://www.uniqlo.com/us/en/products/E453754-000/00?colorDisplayCode=03" },
-  { name: "Washable Milano Ribbed Skipper Polo Sweater", price: "$49.90", image: "339864e7179e.jpg", href: "https://www.uniqlo.com/us/en/products/E482325-000/00?colorDisplayCode=39" },
+  { name: "Cashmere Sweater", price: "$99.90", image: "ab3590107997.jpg", badge: "Bestseller" },
+  { name: "Cashmere Quarter-Zip Sweater", price: "$129.90", image: "11c487a15029.jpg" },
+  { name: "Washable Milano Ribbed Sweater", price: "$49.90", image: "54e68d759d40.jpg" },
+  { name: "Washable Milano Ribbed Skipper Polo Sweater", price: "$49.90", image: "339864e7179e.jpg" },
 ];
 const heattech: Product[] = [
-  { name: "HEATTECH T-Shirt | Short Sleeve", price: "$14.90", image: "e304416fd9cc.jpg", href: "https://www.uniqlo.com/us/en/products/E461001-000/00?colorDisplayCode=00", badge: "Limited-Time Offer until 11/18" },
-  { name: "HEATTECH Tights", price: "$14.90", image: "c0d016600dc8.jpg", href: "https://www.uniqlo.com/us/en/products/E461013-000/00?colorDisplayCode=09", badge: "Limited-Time Offer until 11/18" },
-  { name: "HEATTECH Extra Warm Cashmere Blend T-Shirt", price: "$29.90", image: "17405578698b.jpg", href: "https://www.uniqlo.com/us/en/products/E481441-000/00?colorDisplayCode=07" },
-  { name: "HEATTECH Ultra Warm T-Shirt", price: "$34.90", image: "022933456012.jpg", href: "https://www.uniqlo.com/us/en/products/E479525-000/00?colorDisplayCode=58", badge: "Bestseller" },
+  { name: "HEATTECH T-Shirt | Short Sleeve", price: "$14.90", image: "e304416fd9cc.jpg", badge: "Limited-Time Offer until 11/18" },
+  { name: "HEATTECH Tights", price: "$14.90", image: "c0d016600dc8.jpg", badge: "Limited-Time Offer until 11/18" },
+  { name: "HEATTECH Extra Warm Cashmere Blend T-Shirt", price: "$29.90", image: "17405578698b.jpg" },
+  { name: "HEATTECH Ultra Warm T-Shirt", price: "$34.90", image: "022933456012.jpg", badge: "Bestseller" },
 ];
 const bottoms: Product[] = [
-  { name: "Wide Sweatpants", price: "$39.90", image: "1c06103ac675.jpg", href: "https://www.uniqlo.com/us/en/products/E471809-000/00?colorDisplayCode=09", badge: "Bestseller" },
-  { name: "Straight Jeans", price: "$49.90", image: "7dde7ff53abc.jpg", href: "https://www.uniqlo.com/us/en/products/E487206-000/00?colorDisplayCode=03", badge: "Limited-Time Offer until 11/18" },
-  { name: "Barrel Pants", price: "$49.90", image: "cd1e96641d8d.jpg", href: "https://www.uniqlo.com/us/en/products/E484875-000/00?colorDisplayCode=34", badge: "Limited-Time Offer until 11/18" },
-  { name: "Barrel Jeans", price: "$49.90", image: "2dcef1aa138e.jpg", href: "https://www.uniqlo.com/us/en/products/E488743-000/00?colorDisplayCode=09", badge: "Limited-Time Offer until 11/18" },
+  { name: "Wide Sweatpants", price: "$39.90", image: "1c06103ac675.jpg", badge: "Bestseller" },
+  { name: "Straight Jeans", price: "$49.90", image: "7dde7ff53abc.jpg", badge: "Limited-Time Offer until 11/18" },
+  { name: "Barrel Pants", price: "$49.90", image: "cd1e96641d8d.jpg", badge: "Limited-Time Offer until 11/18" },
+  { name: "Barrel Jeans", price: "$49.90", image: "2dcef1aa138e.jpg", badge: "Limited-Time Offer until 11/18" },
 ];
 
 const campaignImages = {
@@ -94,9 +88,7 @@ function ProductCard({ product, index, onToggle, saved }: {
   return (
     <article className="product-card" data-testid={`card-product-${index}`}>
       <div className="product-photo">
-        <a href={product.href ?? `${men}/outerwear`} aria-label={product.name}>
-          <img src={asset(`/images/${product.image}`)} alt={product.name} loading="eager" />
-        </a>
+        <img src={asset(`/images/${product.image}`)} alt={product.name} loading="eager" />
         <button
           className={`wish-button${saved ? " is-saved" : ""}`}
           type="button"
@@ -169,22 +161,19 @@ function App() {
     <>
       <header className="site-header">
         <div className="header-inner">
-          <a className="brand-logo" href="https://www.uniqlo.com/us/en/" aria-label="UNIQLO home" data-testid="link-home">
+          <a className="brand-logo" href="#top" aria-label="Back to top" data-testid="link-home">
             <img src={asset("/uniqlo-logo.svg")} alt="UNIQLO" />
           </a>
           <nav className="gender-nav" aria-label="Departments">
-            <a href="https://www.uniqlo.com/us/en/" data-testid="link-women">WOMEN</a>
-            <a className="active" href={men} aria-current="page" data-testid="link-men">MEN</a>
-            <a href="https://www.uniqlo.com/us/en/kids" data-testid="link-kids">KIDS</a>
-            <a href="https://www.uniqlo.com/us/en/baby" data-testid="link-baby">BABY</a>
+            <span>WOMEN</span>
+            <a className="active" href="#top" aria-current="page" data-testid="link-men">MEN</a>
+            <span>KIDS</span>
+            <span>BABY</span>
           </nav>
           <div className="header-tools">
             <button className="search-open" type="button" onClick={() => setSearchOpen(true)} aria-label="Open product search field" data-testid="button-open-search">
               <span>Search</span><Search />
             </button>
-            <a className="icon-button" href="https://www.uniqlo.com/us/en/wishlist" aria-label="Wishlist" data-testid="link-wishlist"><Heart /></a>
-            <a className="icon-button" href="https://www.uniqlo.com/us/en/member" aria-label="Membership / Purchase history" data-testid="link-account"><UserRound /></a>
-            <a className="icon-button" href="https://www.uniqlo.com/us/en/cart" aria-label="Cart" data-testid="link-cart"><ShoppingBag /></a>
             <button className="icon-button" type="button" onClick={() => setMenuOpen(true)} aria-label="Open categories" data-testid="button-open-menu"><Menu /></button>
           </div>
         </div>
@@ -193,12 +182,12 @@ function App() {
       <main>
         {offerVisible && (
           <div className="offer-chip" role="status">
-            <span>Shop Early with Extended Holiday Returns! | <a href="https://faq-us.uniqlo.com/articles/en_US/Knowledge/Holiday-Shopping-Guide-2026/">Learn More</a></span>
+            <span>Shop Early with Extended Holiday Returns!</span>
             <button type="button" onClick={() => setOfferVisible(false)} aria-label="Dismiss offer" data-testid="button-dismiss-offer"><X size={13} /></button>
           </div>
         )}
 
-        <section className="hero" aria-label="UNIQLO : C">
+        <section className="hero" id="top" aria-label="UNIQLO : C">
           <img className="hero-image" src={asset("/images/24456c79f0d0.jpg")} alt="UNIQLO : C seasonal sweats" />
           <div className="hero-copy">
             <img className="collab-mark" src={asset("/images/fd94b26e51d5.png")} alt="UNIQLO : C" />
@@ -215,22 +204,28 @@ function App() {
           <h2 className="section-kicker">Search by category</h2>
           <nav className="category-list" aria-label="Shop by category">
             {[...categories, ...featuredCategories].map((category, index) => (
-              <a
-                className="category-link"
-                href={categoryUrl(category.href)}
-                key={category.label}
-                data-testid={`link-category-${index}`}
-              >
-                <img src={asset(`/images/${category.image}`)} alt="" loading="lazy" />
-                <span>{category.label}</span>
-              </a>
+              category.target ? (
+                <a
+                  className="category-link"
+                  href={`#${category.target}`}
+                  key={category.label}
+                  data-testid={`link-category-${index}`}
+                >
+                  <img src={asset(`/images/${category.image}`)} alt="" loading="lazy" />
+                  <span>{category.label}</span>
+                </a>
+              ) : (
+                <div className="category-link" key={category.label}>
+                  <img src={asset(`/images/${category.image}`)} alt="" loading="lazy" />
+                  <span>{category.label}</span>
+                </div>
+              )
             ))}
           </nav>
         </section>
 
         <section className="campaign-grid" aria-label="Men's seasonal campaigns">
-          <article className="campaign-tile wide">
-            <a className="campaign-link" href="https://www.uniqlo.com/us/en/feature/limited-offers/men" aria-label="Limited Time Offers" />
+          <article className="campaign-tile wide" id="limited-offers">
             <img src={asset(`/images/${campaignImages.limited}`)} alt="Limited Time Offers" loading="lazy" />
             <div className="campaign-overlay">
               <h2>Shop Before They're Gone:</h2>
@@ -244,7 +239,7 @@ function App() {
 
         <section className="campaign-grid">
           <article className="campaign-tile wide">
-            <a className="campaign-link" href={`${men}/outerwear-and-blazers`} aria-label="Outerwear Collection" />
+            <a className="campaign-link" href="#outerwear" aria-label="View outerwear products" />
             <img src={asset(`/images/${campaignImages.outerwear}`)} alt="Outerwear Collection" loading="lazy" />
             <img className="campaign-mark" src={asset(`/images/${campaignImages.pufftech}`)} alt="PUFFTECH" />
             <div className="campaign-overlay">
@@ -263,17 +258,17 @@ function App() {
           id="outerwear"
         />
 
-        <section className="centered-campaign">
-          <a href="https://www.uniqlo.com/us/en/feature/thank-you-event">
+        <section className="centered-campaign" id="thank-you">
+          <div className="campaign-card">
             <img src={asset(`/images/${campaignImages.thanks}`)} alt="Thank You Event" loading="lazy" />
             <div className="campaign-overlay"><h2>Thank You Event</h2></div>
             <div className="timer-title">Thank You Event Starts In:</div>
-          </a>
+          </div>
         </section>
 
         <section className="campaign-grid">
           <article className="campaign-tile wide">
-            <a className="campaign-link" href={`${men}/sweaters/sweaters-and-cardigans`} aria-label="Knitwear Collection" />
+            <a className="campaign-link" href="#knitwear" aria-label="View knitwear products" />
             <img src={asset(`/images/${campaignImages.knitwear}`)} alt="Men's Sweaters & Cardigans" loading="lazy" />
             <div className="campaign-overlay">
               <h2>Knitwear Collection</h2>
@@ -293,12 +288,11 @@ function App() {
 
         <section className="campaign-grid">
           <article className="campaign-tile side">
-            <a className="campaign-link" href="https://www.uniqlo.com/us/en/special-feature/gift/gift-guide/holiday" aria-label="Holiday Gift Guide is Here" />
             <img src={asset(`/images/${campaignImages.gifts}`)} alt="Holiday Gift Guide is Here" loading="lazy" />
             <div className="campaign-overlay"><h2>Holiday Gift Guide is Here</h2><p>Gifts they want, gifts they need, and gifts they'll love.</p></div>
           </article>
           <article className="campaign-tile wide">
-            <a className="campaign-link" href="https://www.uniqlo.com/us/en/men/heattech" aria-label="HEATTECH T-Shirt" />
+            <a className="campaign-link" href="#heattech" aria-label="View HEATTECH products" />
             <img src={asset(`/images/${campaignImages.heattech}`)} alt="HEATTECH T-Shirt" loading="lazy" />
             <img className="campaign-mark" src={asset(`/images/${campaignImages.heattechMark}`)} alt="HEATTECH" />
             <div className="campaign-overlay">
@@ -318,13 +312,11 @@ function App() {
         />
 
         <section className="campaign-grid">
-          <article className="campaign-tile side">
-            <a className="campaign-link" href={`${men}/tops/fleece`} aria-label="Men's Fleece" />
+          <article className="campaign-tile side" id="fleece">
             <img src={asset(`/images/${campaignImages.fleece}`)} alt="Men's Fleece" loading="lazy" />
             <div className="campaign-overlay"><h2>Fleece Essentials</h2><p>Comfortable, lightweight fleece for easy warmth all season long.</p></div>
           </article>
-          <article className="campaign-tile side text-dark">
-            <a className="campaign-link" href="https://www.uniqlo.com/us/en/lifewear-magazine" aria-label="LifeWear Magazine" />
+          <article className="campaign-tile side text-dark" id="lifeWear">
             <img src={asset(`/images/${campaignImages.magazine}`)} alt="LifeWear Magazine" loading="lazy" />
             <div className="campaign-overlay"><h2>LifeWear Magazine</h2></div>
           </article>
@@ -332,7 +324,7 @@ function App() {
 
         <section className="campaign-grid">
           <article className="campaign-tile wide">
-            <a className="campaign-link" href={`${men}/bottoms`} aria-label="Men's Bottoms" />
+            <a className="campaign-link" href="#bottoms" aria-label="View men's bottoms" />
             <img src={asset(`/images/${campaignImages.bottoms}`)} alt="Men's Bottoms" loading="lazy" />
             <div className="campaign-overlay">
               <h2>Bottoms Collection</h2>
@@ -350,15 +342,14 @@ function App() {
           id="bottoms"
         />
 
-        <section className="centered-campaign">
-          <a href="https://www.uniqlo.com/us/en/men/tops/t-shirts">
+        <section className="centered-campaign" id="tees">
+          <div className="campaign-card">
             <img src={asset(`/images/${campaignImages.tees}`)} alt="Men's T-Shirts" loading="lazy" />
             <div className="campaign-overlay"><h2>Quality T-Shirts</h2><p>From modern cuts to classic fits, these versatile T-shirts are crafted for long-lasting wear and comfort.</p></div>
-          </a>
+          </div>
         </section>
         <section className="campaign-grid">
-          <article className="campaign-tile side">
-            <a className="campaign-link" href="https://www.gu-global.com/us/en/" aria-label="Meet GU" />
+          <article className="campaign-tile side" id="gu">
             <img src={asset(`/images/${campaignImages.gu}`)} alt="Meet GU" loading="lazy" />
           </article>
         </section>
@@ -366,14 +357,14 @@ function App() {
 
       <footer className="footer">
         <div className="footer-top">
-          <a href="https://www.uniqlo.com/us/en/" aria-label="UNIQLO home">
+          <a href="#top" aria-label="Back to top">
             <img src={asset("/uniqlo-logo.svg")} alt="UNIQLO" />
           </a>
           <nav className="footer-links" aria-label="Customer resources">
-            <a href="https://www.uniqlo.com/us/en/image-search">Image Search</a>
-            <a href="https://map.uniqlo.com/us/en">Store</a>
-            <a href="https://faq-us.uniqlo.com/">FAQ</a>
-            <a href="https://www.uniqlo.com/us/en/contact">IQ Chat</a>
+            <span>Image Search</span>
+            <span>Store</span>
+            <span>FAQ</span>
+            <span>IQ Chat</span>
           </nav>
         </div>
         <p className="footer-note">Can’t find what you’re looking for? Search by category.</p>
@@ -384,13 +375,17 @@ function App() {
         <div className="drawer-head"><h2>MEN</h2><button className="drawer-close" type="button" onClick={() => setMenuOpen(false)} aria-label="Close categories" data-testid="button-close-menu"><X /></button></div>
         <nav className="drawer-categories">
           {[...categories, ...featuredCategories].map((category) => (
-            <a onClick={() => setMenuOpen(false)} href={categoryUrl(category.href)} key={category.label}>{category.label}</a>
+            category.target ? (
+              <a onClick={() => setMenuOpen(false)} href={`#${category.target}`} key={category.label}>{category.label}</a>
+            ) : (
+              <span key={category.label}>{category.label}</span>
+            )
           ))}
         </nav>
         <nav className="drawer-features">
-          <a onClick={() => setMenuOpen(false)} href="https://www.uniqlo.com/us/en/feature/limited-offers/men">Limited-Time Offers</a>
-          <a onClick={() => setMenuOpen(false)} href="https://www.uniqlo.com/us/en/feature/new/men">New Arrivals</a>
-          <a onClick={() => setMenuOpen(false)} href="https://www.uniqlo.com/us/en/special-feature/holiday-returns">Shop Early with Extended Holiday Returns!</a>
+          <a onClick={() => setMenuOpen(false)} href="#limited-offers">Limited-Time Offers</a>
+          <span>New Arrivals</span>
+          <span>Shop Early with Extended Holiday Returns!</span>
         </nav>
       </aside>
 
