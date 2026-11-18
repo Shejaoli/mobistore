@@ -1,0 +1,235 @@
+{
+  "headerLogo": "/uniqlo-logo.svg",
+  "hero": "/images/24456c79f0d0.jpg",
+  "heroCollaborationMark": "/images/fd94b26e51d5.png",
+  "campaigns": {
+    "limitedTimeOffers": "/images/1c8bdfb617f7.jpg",
+    "outerwear": "/images/4bbc1729277b.jpg",
+    "pufftechMark": "/images/5bd2af808b74.png",
+    "thankYouEvent": "/images/52e589c2ba7f.jpg",
+    "knitwear": "/images/ab494bc3b626.jpg",
+    "giftGuide": "/images/c81a36255d8c.png",
+    "heattech": "/images/49221995537d.jpg",
+    "heattechMark": "/images/1d198d6bc402.png",
+    "fleece": "/images/dd03b271c3d4.jpg",
+    "lifeWearMagazine": "/images/2a46ae9ae88e.png",
+    "bottoms": "/images/c03284a33f5c.jpg",
+    "tees": "/images/bef09dd25149.jpg",
+    "meetGU": "/images/5104ec46c9ce.png"
+  },
+  "products": {
+    "484610": "/images/5af84d0bbbc4.jpg",
+    "487326": "/images/e93a6935ab60.jpg",
+    "491096": "/images/7d13f4cfbc01.jpg",
+    "486176": "/images/1987fbf6624f.jpg",
+    "450543": "/images/ab3590107997.jpg",
+    "474146": "/images/11c487a15029.jpg",
+    "453754": "/images/54e68d759d40.jpg",
+    "482325": "/images/339864e7179e.jpg",
+    "461001": "/images/e304416fd9cc.jpg",
+    "461013": "/images/c0d016600dc8.jpg",
+    "471809": "/images/1c06103ac675.jpg",
+    "487206": "/images/7dde7ff53abc.jpg",
+    "484875": "/images/cd1e96641d8d.jpg",
+    "488743": "/images/2dcef1aa138e.jpg",
+    "481441": "/images/17405578698b.jpg",
+    "479525": "/images/022933456012.jpg"
+  },
+  "fontFiles": {
+    "regular": "/fonts/uniqlo-pro-regular.woff2",
+    "bold": "/fonts/uniqlo-pro-bold.woff2",
+    "light": "/fonts/uniqlo-pro-light.woff2"
+  },
+  "sourceImages": [
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res0130a56120ba2921ac2505b9f60e90a6fr.jpg",
+      "local": "/images/24456c79f0d0.jpg",
+      "alt": "UNIQLO : C"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/resbed064e9b3573a6f5954f86115f688a8fr.png",
+      "local": "/images/fd94b26e51d5.png",
+      "alt": "CPJ (White)"
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ%2FCMS%2Fnavi%2Fimage%2FNAVI_486172_27.jpg",
+      "local": "/images/f665ab73af35.jpg",
+      "alt": ""
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ%2FCMS%2Fnavi%2Fimage%2FNAVI_486176_38.jpg",
+      "local": "/images/bb144ce1bae3.jpg",
+      "alt": ""
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ/ST3/jp/imagesother/001_CMSlineup/navi/486102_16.jpg",
+      "local": "/images/64182a17339d.jpg",
+      "alt": ""
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ/ST3/eu/imagesother/2026/navigation/categories/department/men/navi-icon-m-fleece.png",
+      "local": "/images/9cb1f4e566c7.png",
+      "alt": ""
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ/ST3/eu/imagesother/2026/navigation/categories/department/men/navi-icon-m-knit.png",
+      "local": "/images/1641dce93aac.png",
+      "alt": ""
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ/ST3/eu/imagesother/2026/navigation/categories/department/men/navi-icon-m-sweats.png",
+      "local": "/images/4dc159fcd9b5.png",
+      "alt": ""
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ%2FCMS%2Fnavi%2Fimage%2FNAVI_486601_01.jpg",
+      "local": "/images/b6a78bbb0c79.jpg",
+      "alt": ""
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ%2FCMS%2Fnavi%2Fimage%2FNAVI_489560_08.jpg",
+      "local": "/images/8dcc0f8ea907.jpg",
+      "alt": ""
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ/ST3/eu/imagesother/2026/navigation/categories/department/men/navi-icon-m-jeans.png",
+      "local": "/images/84df7dab6457.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/resb2d5cb37cb9c2eb62570e7ef4201a5b1fr.png",
+      "local": "/images/68e82126999f.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res7b42f1c6f2aa61ef647bcfba096e1dc7fr.png",
+      "local": "/images/44fa6eaac7da.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/resd8ab934e664165775b2c4c228a4327d0fr.png",
+      "local": "/images/043d30ea7201.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res1b731a16d238ca37b7e31198c12b0071fr.png",
+      "local": "/images/fa77fe8b9391.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res233fbd4e5003871497178aa12ad0ec5dfr.png",
+      "local": "/images/296679a2d476.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res648fb31723381d4f16337f266c1b18b8fr.png",
+      "local": "/images/623e7b535527.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res90a89b67806c8f17dedfb7e91603ddc3fr.png",
+      "local": "/images/cc7058abd04e.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res6761782363b084e886764644cba24d6afr.png",
+      "local": "/images/cb19735dd043.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res8ca41dbac1ea54b49617dd0ebbb31a23fr.png",
+      "local": "/images/a057b6db5252.png",
+      "alt": ""
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res5dd48562061caf6936099bcc04772644fr.png",
+      "local": "/images/781889f033d4.png",
+      "alt": ""
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ/ST3/us/imagesother/Homepage/11-12-26/HP-large-M-26fw-limited-time-offer-11_12-holiday-COUNTDOWN.jpg",
+      "local": "/images/1c8bdfb617f7.jpg",
+      "alt": "Limited Time Offers"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/resaaa94158f2f7af0876ed31086e7be2fafr.jpg",
+      "local": "/images/4bbc1729277b.jpg",
+      "alt": "Men's Outerwear & Blazers"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res833cdb5d0dce86a5fff85985cef4e395fr.png",
+      "local": "/images/5bd2af808b74.png",
+      "alt": "PUFFTECH (GL-White)"
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ/ST3/us/imagesother/Homepage/11-12-26/HP-large-26fw-KSS-lockup-5x2.jpg",
+      "local": "/images/52e589c2ba7f.jpg",
+      "alt": "Thank You Event"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res22c81d7d23197147beee07ad14b56ba2fr.jpg",
+      "local": "/images/ab494bc3b626.jpg",
+      "alt": "Men's Sweaters & Cardigans"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res93f7c3f8463e077e9ef1afe2ee334b5afr.png",
+      "local": "/images/c81a36255d8c.png",
+      "alt": "Gifts for All-"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res27942a55d06f8e98b5494f863bf658cbfr.jpg",
+      "local": "/images/49221995537d.jpg",
+      "alt": "Men's HEATTECH + Thermal Clothing"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res16054e28b4e1f793a87d6e3beb17631bfr.png",
+      "local": "/images/1d198d6bc402.png",
+      "alt": "HEATTECH"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res2762b17beba7d39123e29d0ced73c9c3fr.jpg",
+      "local": "/images/dd03b271c3d4.jpg",
+      "alt": "Men's Fleece"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res9b5e278f97b517d36e3f1b5ed7e37d6efr.png",
+      "local": "/images/2a46ae9ae88e.png",
+      "alt": "LifeWear Magazine (White)"
+    },
+    {
+      "url": "https://im.uniqlo.com/global-cms/spa/res62003098e9ba5482522abec157c74091fr.jpg",
+      "local": "/images/c03284a33f5c.jpg",
+      "alt": "Men\u2019s Bottoms"
+    },
+    {
+      "url": "https://image.uniqlo.com/UQ/ST3/us/imagesother/Homepage/06-05-26/HP-large-M-u-crew-tshirt-laydown-new-colors.jpg",
+      "local": "/images/bef09dd25149.jpg",
+      "alt": "Men's T-Shirts"
+    },
+    {
+      "url": "https://image.uniqlo.com/GU/ST3/us/imagesother/GUUS_OTHERS/1023_UQ_home_pc5.png",
+      "local": "/images/5104ec46c9ce.png",
+      "alt": "Meet GU"
+    }
+  ],
+  "categoryImages": {
+    "https://image.uniqlo.com/UQ%2FCMS%2Fnavi%2Fimage%2FNAVI_486172_27.jpg": "/images/f665ab73af35.jpg",
+    "https://image.uniqlo.com/UQ%2FCMS%2Fnavi%2Fimage%2FNAVI_486176_38.jpg": "/images/bb144ce1bae3.jpg",
+    "https://image.uniqlo.com/UQ/ST3/jp/imagesother/001_CMSlineup/navi/486102_16.jpg": "/images/64182a17339d.jpg",
+    "https://image.uniqlo.com/UQ/ST3/eu/imagesother/2026/navigation/categories/department/men/navi-icon-m-fleece.png": "/images/9cb1f4e566c7.png",
+    "https://image.uniqlo.com/UQ/ST3/eu/imagesother/2026/navigation/categories/department/men/navi-icon-m-knit.png": "/images/1641dce93aac.png",
+    "https://image.uniqlo.com/UQ/ST3/eu/imagesother/2026/navigation/categories/department/men/navi-icon-m-sweats.png": "/images/4dc159fcd9b5.png",
+    "https://image.uniqlo.com/UQ%2FCMS%2Fnavi%2Fimage%2FNAVI_486601_01.jpg": "/images/b6a78bbb0c79.jpg",
+    "https://image.uniqlo.com/UQ%2FCMS%2Fnavi%2Fimage%2FNAVI_489560_08.jpg": "/images/8dcc0f8ea907.jpg",
+    "https://image.uniqlo.com/UQ/ST3/eu/imagesother/2026/navigation/categories/department/men/navi-icon-m-jeans.png": "/images/84df7dab6457.png",
+    "https://im.uniqlo.com/global-cms/spa/resb2d5cb37cb9c2eb62570e7ef4201a5b1fr.png": "/images/68e82126999f.png",
+    "https://im.uniqlo.com/global-cms/spa/res7b42f1c6f2aa61ef647bcfba096e1dc7fr.png": "/images/44fa6eaac7da.png",
+    "https://im.uniqlo.com/global-cms/spa/resd8ab934e664165775b2c4c228a4327d0fr.png": "/images/043d30ea7201.png",
+    "https://im.uniqlo.com/global-cms/spa/res1b731a16d238ca37b7e31198c12b0071fr.png": "/images/fa77fe8b9391.png",
+    "https://im.uniqlo.com/global-cms/spa/res233fbd4e5003871497178aa12ad0ec5dfr.png": "/images/296679a2d476.png",
+    "https://im.uniqlo.com/global-cms/spa/res648fb31723381d4f16337f266c1b18b8fr.png": "/images/623e7b535527.png",
+    "https://im.uniqlo.com/global-cms/spa/res90a89b67806c8f17dedfb7e91603ddc3fr.png": "/images/cc7058abd04e.png",
+    "https://im.uniqlo.com/global-cms/spa/res6761782363b084e886764644cba24d6afr.png": "/images/cb19735dd043.png",
+    "https://im.uniqlo.com/global-cms/spa/res8ca41dbac1ea54b49617dd0ebbb31a23fr.png": "/images/a057b6db5252.png"
+  }
+}

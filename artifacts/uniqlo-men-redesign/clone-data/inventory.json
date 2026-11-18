@@ -1,0 +1,130 @@
+{
+  "page": "https://www.uniqlo.com/us/en/men",
+  "capturedTitle": "Men's Clothing & Accessories | UNIQLO US",
+  "banner": "Shop Early with Extended Holiday Returns! | Learn More",
+  "nav": [
+    "WOMEN",
+    "MEN",
+    "KIDS",
+    "BABY"
+  ],
+  "hero": {
+    "brand": "UNIQLO : C",
+    "title": "Save on Sweats",
+    "description": "Crafted for coziness and designed with careful details, these sweats offer refined comfort.",
+    "product": "Wide Sweatpants",
+    "price": "$39.90",
+    "originalPrice": "$49.90",
+    "offer": "Limited-Time Offer until 11/18"
+  },
+  "categories": [
+    "Outerwear",
+    "Down",
+    "T-Shirts, Sweats & Fleece",
+    "Fleece",
+    "Sweaters & Knitwear",
+    "Sweatshirts & Hoodies",
+    "Shirts",
+    "Bottoms",
+    "Jeans",
+    "Innerwear & Underwear",
+    "Loungewear & Home",
+    "HEATTECH"
+  ],
+  "featuredCategories": [
+    "Special Collaborations",
+    "UT: Graphic Tees",
+    "New Arrivals",
+    "Limited-Time Offers",
+    "Sale",
+    "GU"
+  ],
+  "promotions": [
+    "Limited Time Offers",
+    "Outerwear Collection",
+    "Thank You Event",
+    "Knitwear Collection",
+    "Holiday Gift Guide is Here",
+    "HEATTECH T-Shirt",
+    "Men's Fleece",
+    "LifeWear Magazine",
+    "Men\u2019s Bottoms",
+    "Men's T-Shirts",
+    "Meet GU"
+  ],
+  "productGroups": [
+    {
+      "title": "Outerwear Collection",
+      "description": "Save now on coats and jackets like PUFFTECH outerwear designed for warmth without the weight.",
+      "products": [
+        {
+          "name": "Harrington Jacket",
+          "price": "$59.90",
+          "image": "484610"
+        },
+        {
+          "name": "Single Collar Short Blouson",
+          "price": "$89.90",
+          "image": "487326",
+          "badge": "Bestseller"
+        },
+        {
+          "name": "Zip-Up Blouson",
+          "price": "$59.90",
+          "image": "491096"
+        },
+        {
+          "name": "Seamless Down Parka",
+          "price": "$179.90",
+          "image": "486176",
+          "badge": "Bestseller"
+        }
+      ]
+    },
+    {
+      "title": "Knitwear Collection",
+      "description": "Find easy-care, easy-wear sweaters in seasonal colors like our hand-washable Merino wool knits.",
+      "products": [
+        {
+          "name": "Cashmere Sweater",
+          "price": "$99.90",
+          "image": "450543",
+          "badge": "Bestseller"
+        },
+        {
+          "name": "Cashmere Quarter-Zip Sweater",
+          "price": "$129.90",
+          "image": "474146"
+        },
+        {
+          "name": "Washable Milano Ribbed Sweater",
+          "price": "$49.90",
+          "image": "453754"
+        },
+        {
+          "name": "Washable Milano Ribbed Skipper Polo Sweater",
+          "price": "$49.90",
+          "image": "482325"
+        }
+      ]
+    },
+    {
+      "title": "HEATTECH",
+      "products": [
+        { "name": "HEATTECH T-Shirt | Short Sleeve", "price": "$14.90", "image": "461001", "badge": "Limited-Time Offer until 11/18" },
+        { "name": "HEATTECH Tights", "price": "$14.90", "image": "461013", "badge": "Limited-Time Offer until 11/18" },
+        { "name": "HEATTECH Extra Warm Cashmere Blend T-Shirt", "price": "$29.90", "image": "481441" },
+        { "name": "HEATTECH Ultra Warm T-Shirt", "price": "$34.90", "image": "479525", "badge": "Bestseller" }
+      ]
+    },
+    {
+      "title": "Men's Bottoms",
+      "products": [
+        { "name": "Wide Sweatpants", "price": "$39.90", "image": "471809", "badge": "Bestseller" },
+        { "name": "Straight Jeans", "price": "$49.90", "image": "487206", "badge": "Limited-Time Offer until 11/18" },
+        { "name": "Barrel Pants", "price": "$49.90", "image": "484875", "badge": "Limited-Time Offer until 11/18" },
+        { "name": "Barrel Jeans", "price": "$49.90", "image": "488743", "badge": "Limited-Time Offer until 11/18" }
+      ]
+    }
+  ]
+}
